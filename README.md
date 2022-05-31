@@ -32,7 +32,7 @@ name: Weatherbot
 
 on:
   schedule:
-    - cron: "0 0,12,18 * * *"
+    - cron: "0 * * * *"
 
 jobs:
   weather_update:
@@ -42,7 +42,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Weather
-        uses: katydecorah/weatherbot@v2.1.0
+        uses: othijssens/weatherbot@v2.1.0
         with:
           Latitude: ${{ secrets.Latitude }}
           Longitude: ${{ secrets.Longitude }}
