@@ -26,19 +26,9 @@ export type Datum = {
   sunrise: number;
   sunset: number;
   moon_phase: number;
-  precipAccumulation?: number;
   rain: number;
   rainMax: number;
-  precipProbability: number;
   temp: number;
-  temperatureMin: number;
-  temperatureMinTime: number;
-  temperatureMax: number;
-  temperatureMaxTime: number;
-  apparentTemperatureMin: number;
-  apparentTemperatureMinTime: number;
-  apparentTemperatureMax: number;
-  apparentTemperatureMaxTime: number;
   dew_point: number;
   humidity: number;
   wind_speed: number;
@@ -47,8 +37,6 @@ export type Datum = {
   clouds: number;
   pressure: number;
   ozone: number;
-  rainMaxTime?: number;
-  precipType: string;
 };
 
 export interface Currently extends Datum {
