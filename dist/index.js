@@ -13015,7 +13015,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 function getWeather() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch(`https://api.darksky.net/forecast/${(0,core.getInput)("DarkSkySecretKey")}/${(0,core.getInput)("Latitude")},${(0,core.getInput)("Longitude")}`, {
+            const response = yield fetch(`https://api.darksky.net/forecast/${(0,core.getInput)("OpenWeatherMapSecretKey")}/${(0,core.getInput)("Latitude")},${(0,core.getInput)("Longitude")}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

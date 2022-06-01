@@ -46,7 +46,7 @@ jobs:
         with:
           Latitude: ${{ secrets.Latitude }}
           Longitude: ${{ secrets.Longitude }}
-          DarkSkySecretKey: ${{ secrets.DarkSkySecretKey }}
+          OpenWeatherMapSecretKey: ${{ secrets.OpenWeatherMapSecretKey }}
           SlackWebHookUrl: ${{ secrets.SlackWebHookUrl }}
 ```
 
@@ -56,9 +56,11 @@ jobs:
 
 - `Longitude`: Required. The longitude of where you want to return the weather.
 
-- `DarkSkySecretKey`: Required. Your Dark Sky secrety key. Use a respository secret https://docs.github.com/en/actions/security-guides/encrypted-secrets
+- `OpenWeatherMapSecretKey`: Required. Your Open Weather Map secrety key. Use a 
+  respository secret https://docs.github.com/en/actions/security-guides/encrypted-secrets
 
-- `SlackWebHookUrl`: Required. Your Slack webhook URL. Use a respository secret https://docs.github.com/en/actions/security-guides/encrypted-secrets
+- `SlackWebHookUrl`: Required. Your Slack webhook URL. Use a respository secret 
+  https://docs.github.com/en/actions/security-guides/encrypted-secrets
 
 - `Timezone`: Your timezone. Default: `America/New_York`.
 

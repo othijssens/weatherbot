@@ -4,9 +4,8 @@ import { getInput } from "@actions/core";
 export default async function getWeather() {
   try {
     const response = await fetch(
-      `https://api.darksky.net/forecast/${getInput(
-        "DarkSkySecretKey"
-      )}/${getInput("Latitude")},${getInput("Longitude")}`,
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${getInput("Latitude")}&
+    lon=${getInput("Longitude")}&appid=${getInput("OpenWeatherMapSecretKey")}`,
       {
         method: "GET",
         headers: {
@@ -21,17 +20,17 @@ export default async function getWeather() {
 }
 
 export type Datum = {
-  time: number;
+  dt: number;
   summary: string;
   icon: string;
-  sunriseTime: number;
-  sunsetTime: number;
-  moonPhase: number;
+  sunrise: number;
+  sunset: number;
+  moon_phase: number;
   precipAccumulation?: number;
-  precipIntensity: number;
-  precipIntensityMax: number;
+  rain: number;
+  rainMax: number;
   precipProbability: number;
-  temperature: number;
+  temp: number;
   temperatureMin: number;
   temperatureMinTime: number;
   temperatureMax: number;
@@ -40,20 +39,20 @@ export type Datum = {
   apparentTemperatureMinTime: number;
   apparentTemperatureMax: number;
   apparentTemperatureMaxTime: number;
-  dewPoint: number;
+  dew_point: number;
   humidity: number;
-  windSpeed: number;
-  windBearing: number;
+  wind_speed: number;
+  wind_deg: number;
   visibility: number;
-  cloudCover: number;
+  clouds: number;
   pressure: number;
   ozone: number;
-  precipIntensityMaxTime?: number;
+  rainMaxTime?: number;
   precipType: string;
 };
 
 export interface Currently extends Datum {
-  time: number;
+  dt: number;
   summary: string;
   icon: string;
 }
@@ -68,7 +67,7 @@ export interface Alerts {
   title: string;
   regions: string[];
   severity: string;
-  time: number;
+  dt: number;
   expires: number;
   description: string;
   uri: string;

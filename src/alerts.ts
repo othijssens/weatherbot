@@ -10,8 +10,8 @@ export default function getAlerts(alerts: Alerts[]): Message {
   return filtered.map(formatAlert);
 }
 
-function formatAlert({ time, expires, severity, uri, title }) {
-  const { start, end } = eventRange(time, expires);
+function formatAlert({ dt, expires, severity, uri, title }) {
+  const { start, end } = eventRange(dt, expires);
   return {
     type: "section",
     text: {

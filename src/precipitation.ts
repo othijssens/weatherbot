@@ -36,13 +36,13 @@ function unixToHour(unix: number) {
 }
 
 export function listHourly({
-  time,
+  dt,
   precipAccumulation,
   temperature,
   icon,
 }: Datum) {
-  const spacer = unixToHour(time).length === 4 ? "  " : "";
-  return `${getIcon(icon)} ${spacer}${unixToHour(time)}\t${
+  const spacer = unixToHour(dt).length === 4 ? "  " : "";
+  return `${getIcon(icon)} ${spacer}${unixToHour(dt)}\t${
     precipAccumulation ? precipAccumulation.toFixed(1) : 0
   }" ${temperature.toFixed(0)}℉`;
 }

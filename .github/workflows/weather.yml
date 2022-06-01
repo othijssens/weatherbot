@@ -16,5 +16,5 @@ jobs:
         with:
           Latitude: ${{ secrets.Latitude }}
           Longitude: ${{ secrets.Longitude }}
-          DarkSkySecretKey: ${{ secrets.DarkSkySecretKey }}
+          OpenWeatherMapSecretKey: ${{ secrets.OpenWeatherMapSecretKey }}
           SlackWebHookUrl: ${{ secrets.SlackWebHookUrl }}
