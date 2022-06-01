@@ -47,7 +47,7 @@ jobs:
           Latitude: ${{ secrets.Latitude }}
           Longitude: ${{ secrets.Longitude }}
           OpenWeatherMapSecretKey: ${{ secrets.OpenWeatherMapSecretKey }}
-          SlackWebHookUrl: ${{ secrets.SlackWebHookUrl }}
+          SlackWebHookUrl: ${{ secrets.SLACKACCESSTOKEN }}
 ```
 
 ## Action options
